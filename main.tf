@@ -17,8 +17,10 @@ resource "aws_instance" "example" {
                sudo apt install docker-ce -y
                sudo apt install nginx -y
                EOF
+  key_name = "Devops_POD"
 
   tags = {
     Name = "Devops-Class"  # Specify the desired name for your instance
   }
 }
+
