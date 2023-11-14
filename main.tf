@@ -33,7 +33,7 @@ resource "aws_security_group" "pod_sg" {
 
 resource "aws_instance" "example" {
   ami           = "ami-06aa3f7caf3a30282"  # Specify the AMI ID for your desired operating system
-  instance_type = "t2.micro"                 # Specify the instance type
+  instance_type = "t2.medium"                 # Specify the instance type
 
 
   user_data = <<-EOF
