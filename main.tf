@@ -45,7 +45,12 @@ resource "aws_instance" "example" {
                sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
                sudo apt update -y
                sudo apt install docker-ce -y
-               sudo apt install nginx -y
+               curl -LO https://storage.googleapis.com/minikube/releases/latest/minikube_latest_amd64.deb
+               sudo dpkg -i minikube_latest_amd64.deb
+               sudo usermod -aG docker $USER
+               newgrp docker
+               minikube --driver=docker
+               minikube start
                EOF
   key_name = "Devops_POD"
 
